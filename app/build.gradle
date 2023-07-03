@@ -6,8 +6,8 @@ plugins {
 android {
     namespace 'com.example.xoso'
     compileSdk 33
-    buildFeatures {
-        dataBinding true
+    dataBinding {
+        enabled = true
     }
     defaultConfig {
         applicationId "com.example.xoso"
@@ -45,4 +45,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'org.jsoup:jsoup:1.14.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
 }

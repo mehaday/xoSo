@@ -9,5 +9,14 @@
         android:id="@+id/fragment_Home"
         android:name="com.example.xoso.Fragment_Home"
         android:label="fragment__home"
-        tools:layout="@layout/fragment__home" />
+        tools:layout="@layout/fragment__home" >
+        <action
+            android:id="@+id/action_fragment_Home_to_ketQua"
+            app:destination="@id/ketQua" />
+    </fragment>
+    <fragment
+        android:id="@+id/ketQua"
+        android:name="com.example.xoso.ketQua"
+        android:label="fragment_ket_qua"
+        tools:layout="@layout/fragment_ket_qua" />
 </navigation>
