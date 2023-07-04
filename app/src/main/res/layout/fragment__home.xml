@@ -17,409 +17,145 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="562dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp">
-
-                <LinearLayout
+                android:orientation="horizontal">
+                <include
                     android:id="@+id/ketQua"
-                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Kết quả" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout2"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/homnay"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/ketQua"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hôm nay" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout3"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/ketQuaDai"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Kết quả Đài" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout4"
-                    android:layout_width="0dp"
+                android:orientation="horizontal">
+                <include
+                    android:id="@+id/tuongThuat"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tường thuật" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout5"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/thongKe"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout4"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Thống kê" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout6"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/TKloto"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout5"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TK loto 102" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout7"
-                    android:layout_width="0dp"
+                android:orientation="horizontal">
+                <include
+                    android:id="@+id/TKVitri"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout8"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView7"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TK Vị trí" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout8"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/loGan"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout9"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout7"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lô gan" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout9"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/soMo"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout8"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sổ mơ" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout10"
-                    android:layout_width="0dp"
+                android:orientation="horizontal">
+                <include
+                    android:id="@+id/nguHanh"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ngũ hành" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout11"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/traCuu"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout12"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout10"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tra cứu" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout12"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/phanTich"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout11"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView12"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Phân tích" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+            </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#575656" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="#575656"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout13"
-                    android:layout_width="0dp"
+                android:orientation="horizontal">
+                <include
+                    android:id="@+id/vietLott"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout14"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView13"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Vietlott" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout14"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/TKKeno"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout15"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout13"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView14"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="T.Kê Keno" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout15"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+                <include
+                    android:id="@+id/TKMega"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout14"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView15"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        tools:src="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/textView15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="T.Kê Mega" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    layout="@layout/home_item" />
+            </LinearLayout>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

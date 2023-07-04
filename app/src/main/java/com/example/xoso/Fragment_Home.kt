@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.xoso.databinding.FragmentHomeBinding
 
 class Fragment_Home : Fragment() {
@@ -14,12 +15,27 @@ class Fragment_Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val updateTime = System.currentTimeMillis()
+
         val binding: FragmentHomeBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment__home,container,false
         )
-        binding.ketQua.setOnClickListener { view: View ->
-
-            Navigation.findNavController(view).navigate(R.id.action_fragment_Home_to_ketQua)
+        binding.ketQua.homeItemTextview.text = "kết quả"
+        binding.ketQua.homeItem.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToKetQua())
+        }
+        binding.homnay.homeItemTextview.text = "Hôm nay"
+        binding.homnay.homeItem.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToHomNay())
+        }
+        binding.ketQuaDai.homeItemTextview.text = "Kết quả đài"
+        binding.ketQuaDai.homeItem.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToFragmentKetQuaDai())
+        }
+        binding.tuongThuat.homeItemTextview.text = "Tường thuật"
+        binding.tuongThuat.homeItem.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToKhungXoSoMB())
         }
         return binding.root
         // Inflate the layout for this fragment

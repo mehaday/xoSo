@@ -13,10 +13,41 @@
         <action
             android:id="@+id/action_fragment_Home_to_ketQua"
             app:destination="@id/ketQua" />
+        <action
+            android:id="@+id/action_fragment_Home_to_homNay"
+            app:destination="@id/homNay" />
+        <action
+            android:id="@+id/action_fragment_Home_to_fragment_ket_qua_dai"
+            app:destination="@id/fragment_ket_qua_dai" />
+        <action
+            android:id="@+id/action_fragment_Home_to_khung_xo_so_m_b"
+            app:destination="@id/khung_xo_so_m_b" />
     </fragment>
     <fragment
         android:id="@+id/ketQua"
         android:name="com.example.xoso.ketQua"
         android:label="fragment_ket_qua"
         tools:layout="@layout/fragment_ket_qua" />
+    <fragment
+        android:id="@+id/homNay"
+        android:name="com.example.xoso.homNay"
+        android:label="homNay" >
+        <action
+            android:id="@+id/action_homNay_to_khung_xo_so_m_b"
+            app:destination="@id/khung_xo_so_m_b" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_ket_qua_dai"
+        android:name="com.example.xoso.ket_qua_dai"
+        android:label="fragment_ket_qua_dai" />
+    <fragment
+        android:id="@+id/khung_xo_so_m_b"
+        android:name="com.example.xoso.khung_xo_so_m_b"
+        android:label="fragment_khung_xo_so_m_b"
+        tools:layout="@layout/fragment_khung_xo_so_m_b" >
+        <argument
+            android:name="tenXoSo"
+            app:argType="string"
+            android:defaultValue="xổ số" />
+    </fragment>
 </navigation>
