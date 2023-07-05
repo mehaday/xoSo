@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.example.xoso.databinding.FragmentKetQuaDaiBinding
 
 class ket_qua_dai : Fragment() {
@@ -34,8 +37,14 @@ class ket_qua_dai : Fragment() {
         list.add(list_hom_nay(R.drawable.icon_ketquadai,"Xổ số Quảng Trị","Mở thưởng ngày 29/6/2023"))
 
         adapterHomNay = adapter_hom_nay(requireActivity(),list)
+
         binding.itemKetQuaDai.adapter = adapterHomNay
-        // Inflate the layout for this fragment
+
+
+        binding.itemKetQuaDai.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
+            Toast.makeText(requireContext(), "Bạn chọn ${list[i].title}", Toast.LENGTH_SHORT).show()
+            Navigation.findNavController(view).navigate(ket_qua_daiDirections.actionFragmentKetQuaDaiToKhungXoSoMB(list[i].title))
+        }
         return binding.root
     }
 }

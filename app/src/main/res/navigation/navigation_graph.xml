@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_fragment_Home_to_khung_xo_so_m_b"
             app:destination="@id/khung_xo_so_m_b" />
+        <action
+            android:id="@+id/action_fragment_Home_to_soMo3"
+            app:destination="@id/soMo3" />
     </fragment>
     <fragment
         android:id="@+id/ketQua"
@@ -39,7 +42,11 @@
     <fragment
         android:id="@+id/fragment_ket_qua_dai"
         android:name="com.example.xoso.ket_qua_dai"
-        android:label="fragment_ket_qua_dai" />
+        android:label="fragment_ket_qua_dai" >
+        <action
+            android:id="@+id/action_fragment_ket_qua_dai_to_khung_xo_so_m_b"
+            app:destination="@id/khung_xo_so_m_b" />
+    </fragment>
     <fragment
         android:id="@+id/khung_xo_so_m_b"
         android:name="com.example.xoso.khung_xo_so_m_b"
@@ -50,4 +57,8 @@
             app:argType="string"
             android:defaultValue="xổ số" />
     </fragment>
+    <fragment
+        android:id="@+id/soMo3"
+        android:name="com.example.xoso.soMo"
+        android:label="soMo" />
 </navigation>

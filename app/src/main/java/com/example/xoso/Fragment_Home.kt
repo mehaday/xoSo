@@ -23,7 +23,7 @@ class Fragment_Home : Fragment() {
         )
         binding.ketQua.homeItemTextview.text = "kết quả"
         binding.ketQua.homeItem.setOnClickListener { view: View ->
-            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToKetQua())
+            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToKhungXoSoMB())
         }
         binding.homnay.homeItemTextview.text = "Hôm nay"
         binding.homnay.homeItem.setOnClickListener { view: View ->
@@ -36,6 +36,10 @@ class Fragment_Home : Fragment() {
         binding.tuongThuat.homeItemTextview.text = "Tường thuật"
         binding.tuongThuat.homeItem.setOnClickListener { view: View ->
             Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToKhungXoSoMB())
+        }
+        binding.soMo.homeItemTextview.text = "Sổ Mơ"
+        binding.soMo.homeItem.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToSoMo3())
         }
         return binding.root
         // Inflate the layout for this fragment

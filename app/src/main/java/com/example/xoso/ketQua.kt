@@ -39,7 +39,6 @@ class ketQua : Fragment() {
                 Log.d("abc", contents.toString())
                 // Xử lý kết quả
                 activity?.runOnUiThread {
-                    var mau_xen_ke = 1
                     if (contents != null) {
                         //day
                     }

@@ -77,7 +77,7 @@ class khung_xo_so_m_b : Fragment() {
                             var dem = 0
                             for (number in numbers) {
                                 dem++
-                                if (dem == 4) {
+                                if (dem == 4 && numbers.size > 4) {
                                     emptyList.add(emptyList2)
                                     emptyList2 = mutableListOf<String>()
                                     emptyList2.add(contents[i])

@@ -18,7 +18,8 @@
                 android:layout_height="wrap_content"
                 android:text="Kết quả xổ số miền Bắc"
                 android:textSize="20sp"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:gravity="center"/>
 
             <LinearLayout
                 android:id="@+id/parent_layout"

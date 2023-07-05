@@ -29,7 +29,10 @@ class homNay : Fragment() {
         list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Quảng Nam","Mở thưởng lúc 17h15p"))
 
         adapterHomNay = adapter_hom_nay(requireActivity(),list)
+
         binding.itemHomnay.adapter = adapterHomNay
+
+
         binding.itemHomnay.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
             Toast.makeText(requireContext(), "Bạn chọn ${list[i].title}", Toast.LENGTH_SHORT).show()
             Navigation.findNavController(view).navigate(homNayDirections.actionHomNayToKhungXoSoMB(list[i].title))
