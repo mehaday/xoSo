@@ -41,6 +41,9 @@ class Fragment_Home : Fragment() {
         binding.soMo.homeItem.setOnClickListener { view: View ->
             Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToSoMo3())
         }
+        binding.vietLott.homeItem.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(Fragment_HomeDirections.actionFragmentHomeToKhungXoSoMN())
+        }
         return binding.root
         // Inflate the layout for this fragment
 

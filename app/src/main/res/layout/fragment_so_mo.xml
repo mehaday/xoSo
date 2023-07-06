@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:background="@color/lightgray"/>
         <ListView
             android:id="@+id/item_so_mo"
             android:layout_width="match_parent"

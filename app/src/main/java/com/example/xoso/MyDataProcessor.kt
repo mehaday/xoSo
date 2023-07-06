@@ -1,67 +1,51 @@
-package com.example.xoso
-
-import android.util.Log
-import okhttp3.*
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.RequestBody.Companion.toRequestBody
-import java.io.IOException
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import org.jsoup.Jsoup
 
 class MyDataProcessor {
-    fun processScrapingData(tinh: String, ngay: String, callback: (List<String>?, Exception?) -> Unit) {
-        val url = "https://1688xoso.net/backend/wp-content/themes/168xoso/ma-nhung/ket-qua.php"
-        val requestBody = "area=$tinh&date=$ngay".toRequestBody("application/x-www-form-urlencoded".toMediaType())
+    fun getEmptyList(tinh: String, ngay: String): MutableList<List<String>> {
+        val url = "https://www.xoso.net/getkqxs/$tinh/$ngay.js"
 
         val client = OkHttpClient()
         val request = Request.Builder()
             .url(url)
-            .post(requestBody)
             .build()
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                var rs = response.body?.string()
-                val contents = mutableListOf<String>()
-                rs = rs?.replace(" class=\\\"db\\\"", "")
-                rs = rs?.replace("Giải ĐB", "ĐB")
-                rs = rs?.replace("Giải Nhất", "G.1")
-                rs = rs?.replace("Giải Nhì", "G.2")
-                rs = rs?.replace("Giải ba", "G.3")
-                rs = rs?.replace("Giải tư", "G.4")
-                rs = rs?.replace("Giải năm", "G.5")
-                rs = rs?.replace("Giải sáu", "G.6")
-                rs = rs?.replace("Giải bảy", "G.7")
-                rs?.let {
-                    val startTag = "<td>"
-                    val startIndexes = mutableListOf<Int>()
-                    var startIndex = it.indexOf(startTag)
+        val response = client.newCall(request).execute()
+        val html = response.body?.string()
 
-                    while (startIndex != -1) {
-                        startIndexes.add(startIndex)
-                        startIndex = it.indexOf(startTag, startIndex + 1)
-                    }
+        val document = Jsoup.parse(html)
+        val contentElements = document.getElementsByClass("content")
+        val emptyList = mutableListOf<List<String>>()
 
-                    val endTag = "</td>"
-                    val endIndexes = mutableListOf<Int>()
+        if (contentElements.isNotEmpty()) {
+            val content = contentElements[0]
+            val tdElements = content.getElementsByTag("td")
+            var dem = 0
+            val myList = mutableListOf<String>()
 
-                    for (startIndex in startIndexes) {
-                        val endIndex = it.indexOf(endTag, startIndex)
-                        if (endIndex != -1) {
-                            endIndexes.add(endIndex)
-                        }
-                    }
+            for (tdElement in tdElements) {
+                val tdContent = tdElement.text()
+                myList.add(tdContent)
+            }
 
-                    for (i in 0 until minOf(startIndexes.size, endIndexes.size)) {
-                        val content = it.substring(startIndexes[i] + startTag.length, endIndexes[i])
-                        contents.add(content)
-                    }
+            var contents = myList.subList(2, myList.size)
+
+            for (i in contents.indices step 2) {
+                var emptyList2 = mutableListOf<String>()
+                emptyList2.add(contents[i])
+                val numbers = contents[i + 1].split(" - ")
+                var dem = 0
+
+                for (number in numbers) {
+                    emptyList2.add(number)
                 }
 
-                callback(contents, null)
+                emptyList.add(emptyList2)
             }
+        }
 
-            override fun onFailure(call: Call, e: IOException) {
-                callback(null, e)
-            }
-        })
+        return emptyList
     }
 }
+

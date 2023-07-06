@@ -1,5 +1,6 @@
 package com.example.xoso
 
+import MyDataProcessor
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -24,27 +25,6 @@ class ketQua : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ket_qua, container, false)
         val tableLayout = view.findViewById<LinearLayout>(R.id.tableLayout)
-
-        // lấy ngày tháng năm
-        val currentDate = LocalDate.now()
-        val formattedDate = currentDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-        //api
-        val dataProcessor = MyDataProcessor()
-        dataProcessor.processScrapingData("Hà Nội", formattedDate) { contents, exception ->
-            if (exception != null) {
-                // Xử lý lỗi
-                Log.d("aaa","lỗi")
-                exception.printStackTrace()
-            } else {
-                Log.d("abc", contents.toString())
-                // Xử lý kết quả
-                activity?.runOnUiThread {
-                    if (contents != null) {
-                        //day
-                    }
-                }
-            }
-        }
 
         return view
     }

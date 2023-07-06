@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.RadioGroup
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
-import com.example.xoso.databinding.FragmentKhungXoSoMBBinding
 import com.example.xoso.databinding.FragmentKhungXoSoMNBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -19,7 +18,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class khung_xo_so_m_b : Fragment() {
+class khung_xo_so_m_n : Fragment() {
     private val rowsLast3Digits: MutableList<List<String>> = mutableListOf()
     private var rowsLast4Digits: MutableList<List<String>> = mutableListOf()
     private val rowsLast2Digits: MutableList<List<String>> = mutableListOf()
@@ -28,13 +27,13 @@ class khung_xo_so_m_b : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentKhungXoSoMBBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_khung_xo_so_m_b, container, false
+        val binding: FragmentKhungXoSoMNBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_khung_xo_so_m_n, container, false
         )
 
         val tinh = "bac-lieu"
         val ngay = "04-07-2023"
-        binding.textView2.text = ngay
+
         GlobalScope.launch(Dispatchers.Main) {
             val generator = MyDataProcessor()
             val emptyList = withContext(Dispatchers.IO) {
