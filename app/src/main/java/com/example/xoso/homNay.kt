@@ -21,12 +21,12 @@ class homNay : Fragment() {
             inflater, R.layout.fragment_hom_nay,container,false
         )
         var list = mutableListOf<list_hom_nay>()
-        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Miền Bắc","Mở thưởng lúc 18h15p"))
-        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Bạc Liêu","Mở thưởng lúc 16h15p"))
-        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Bến Tre","Mở thưởng lúc 16h15p"))
-        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Vũng Tàu","Mở thưởng lúc 16h15p"))
-        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Đắk Lắk","Mở thưởng lúc 17h15p"))
-        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Quảng Nam","Mở thưởng lúc 17h15p"))
+        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Miền Bắc","Mở thưởng lúc 18h15p","mien-bac"))
+        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Bạc Liêu","Mở thưởng lúc 16h15p","bac-lieu"))
+        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Bến Tre","Mở thưởng lúc 16h15p","ben-tre"))
+        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Vũng Tàu","Mở thưởng lúc 16h15p","vung-tau"))
+        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Đắk Lắk","Mở thưởng lúc 17h15p","dak-lak"))
+        list.add(list_hom_nay(R.drawable.icon_homnay_item,"Xổ số Quảng Nam","Mở thưởng lúc 17h15p","quang-nam"))
 
         adapterHomNay = adapter_hom_nay(requireActivity(),list)
 
@@ -34,8 +34,13 @@ class homNay : Fragment() {
 
 
         binding.itemHomnay.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
-            Toast.makeText(requireContext(), "Bạn chọn ${list[i].title}", Toast.LENGTH_SHORT).show()
-            Navigation.findNavController(view).navigate(homNayDirections.actionHomNayToKhungXoSoMB(list[i].title))
+            if (i == 0) {
+                Toast.makeText(requireContext(), "Bạn chọn ${list[i].title}", Toast.LENGTH_SHORT).show()
+                Navigation.findNavController(view).navigate(homNayDirections.actionHomNayToKhungXoSoMB(list[i].key,list[i].title))
+            }else {
+                Toast.makeText(requireContext(), "Bạn chọn ${list[i].title}", Toast.LENGTH_SHORT).show()
+                Navigation.findNavController(view).navigate(homNayDirections.actionHomNayToKhungXoSoMN(list[i].key,list[i].title))
+            }
 
         }
         return binding.root

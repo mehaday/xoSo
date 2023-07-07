@@ -8,23 +8,43 @@
     <fragment
         android:id="@+id/fragment_Home"
         android:name="com.example.xoso.Fragment_Home"
-        android:label="fragment__home"
-        tools:layout="@layout/fragment__home" >
+        android:label="home"
+        tools:layout="@layout/fragment__home">
         <action
             android:id="@+id/action_fragment_Home_to_ketQua"
-            app:destination="@id/ketQua" />
+            app:destination="@id/ketQua"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_in_right" />
         <action
             android:id="@+id/action_fragment_Home_to_homNay"
-            app:destination="@id/homNay" />
+            app:destination="@id/homNay"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_fragment_Home_to_fragment_ket_qua_dai"
-            app:destination="@id/fragment_ket_qua_dai" />
+            app:destination="@id/fragment_ket_qua_dai"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_fragment_Home_to_khung_xo_so_m_b"
-            app:destination="@id/khung_xo_so_m_b" />
+            app:destination="@id/khung_xo_so_m_b"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_fragment_Home_to_soMo3"
-            app:destination="@id/soMo3" />
+            app:destination="@id/soMo3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_fragment_Home_to_khung_xo_so_m_n"
             app:destination="@id/khung_xo_so_m_n" />
@@ -37,28 +57,46 @@
     <fragment
         android:id="@+id/homNay"
         android:name="com.example.xoso.homNay"
-        android:label="homNay" >
+        android:label="Hôm nay">
         <action
             android:id="@+id/action_homNay_to_khung_xo_so_m_b"
-            app:destination="@id/khung_xo_so_m_b" />
+            app:destination="@id/khung_xo_so_m_b"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homNay_to_khung_xo_so_m_n"
+            app:destination="@id/khung_xo_so_m_n"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/fragment_ket_qua_dai"
         android:name="com.example.xoso.ket_qua_dai"
-        android:label="fragment_ket_qua_dai" >
+        android:label="Kết quả đài">
         <action
-            android:id="@+id/action_fragment_ket_qua_dai_to_khung_xo_so_m_b"
-            app:destination="@id/khung_xo_so_m_b" />
+            android:id="@+id/action_fragment_ket_qua_dai_to_khung_xo_so_m_n"
+            app:destination="@id/khung_xo_so_m_n"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/khung_xo_so_m_b"
         android:name="com.example.xoso.khung_xo_so_m_b"
-        android:label="fragment_khung_xo_so_m_b"
-        tools:layout="@layout/fragment_khung_xo_so_m_b" >
+        android:label="Kết quả xổ số Miền Bắc"
+        tools:layout="@layout/fragment_khung_xo_so_m_b">
         <argument
             android:name="tenXoSo"
-            app:argType="string"
-            android:defaultValue="xổ số" />
+            android:defaultValue="xổ số"
+            app:argType="string" />
+        <argument
+            android:name="key"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/soMo3"
@@ -67,5 +105,13 @@
     <fragment
         android:id="@+id/khung_xo_so_m_n"
         android:name="com.example.xoso.khung_xo_so_m_n"
-        android:label="khung_xo_so_m_n" />
+        android:label="Kết quả xổ số Miền Nam" >
+        <argument
+            android:name="tenXoSo"
+            app:argType="string"
+            android:defaultValue="xổ số" />
+        <argument
+            android:name="key"
+            app:argType="string" />
+    </fragment>
 </navigation>

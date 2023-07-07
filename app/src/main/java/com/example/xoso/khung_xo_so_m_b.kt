@@ -8,16 +8,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioGroup
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.example.xoso.databinding.FragmentKhungXoSoMBBinding
-import com.example.xoso.databinding.FragmentKhungXoSoMNBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
+import java.time.DayOfWeek
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class khung_xo_so_m_b : Fragment() {
     private val rowsLast3Digits: MutableList<List<String>> = mutableListOf()
@@ -32,13 +32,31 @@ class khung_xo_so_m_b : Fragment() {
             inflater, R.layout.fragment_khung_xo_so_m_b, container, false
         )
 
-        val tinh = "bac-lieu"
-        val ngay = "04-07-2023"
-        binding.textView2.text = ngay
+
+        //
+        val lay_gia_tri_test = arguments?.let { khung_xo_so_m_bArgs.fromBundle(it) }
+        binding.tenXoSo.text = lay_gia_tri_test?.tenXoSo
+        // lấy thứ hiện tại
+        val today: LocalDate = LocalDate.now()
+        val dayOfWeek: DayOfWeek = today.dayOfWeek
+        Log.d("xinchao",dayOfWeek.toString())
+        //
+        //lấy ngày hiện tại
+        val currentDate = LocalDate.now()
+        val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        val formattedDate = currentDate.format(formatter)
+        //tỉnh
+        val tinh = lay_gia_tri_test?.key.toString()
+
+
+        Log.d("xinchao",lay_gia_tri_test?.key.toString())
+        //
+
+        binding.textView2.text = "${dayOfWeek} $formattedDate"
         GlobalScope.launch(Dispatchers.Main) {
             val generator = MyDataProcessor()
             val emptyList = withContext(Dispatchers.IO) {
-                generator.getEmptyList(tinh, ngay)
+                generator.getEmptyList(tinh, formattedDate)
             }
 
             // Sử dụng kết quả emptyList theo nhu cầu
@@ -47,6 +65,61 @@ class khung_xo_so_m_b : Fragment() {
             // Ví dụ: binding.myTextView.text = emptyList.toString()
             var ketqua = emptyList
             Log.d("ketqua", ketqua.toString())
+
+            //xử lý đầu đuôi
+            val transformedItem = mutableListOf<String>()
+            for (item in emptyList) {
+                for (i in 0 until item.size) {
+                    if (i != 0) {
+                        val number = item[i]
+                        val shortenedNumber = number.takeLast(2)
+                        transformedItem.add(shortenedNumber)
+                    }
+                }
+            }
+            Log.d("danhsach", transformedItem.toString())
+            //
+            var a = transformedItem
+            var dau = mutableListOf<List<String>>()
+            for (j in 0..9) {
+                var list = mutableListOf<String>()
+                var text = ""
+                for (i in a) {
+                    var b = j.toString()
+                    if (b == i[0].toString()) {
+                        text = text + i[1].toString() + " , "
+                    }
+                }
+                list.add(j.toString())
+                if (text == "") {
+                    list.add("-")
+                }else {
+                    text = text.dropLast(2)
+                    list.add(text)
+                }
+                dau.add(list)
+            }
+            var duoi = mutableListOf<List<String>>()
+            for (j in 0..9) {
+                var list = mutableListOf<String>()
+                var text = ""
+                for (i in a) {
+                    var b = j.toString()
+                    if (b == i[0].toString()) {
+                        text = text + i[1].toString() + " , "
+                    }
+                }
+                list.add(j.toString())
+                if (text == "") {
+                    list.add("-")
+                }else {
+                    text = text.dropLast(2)
+                    list.add(text)
+                }
+                duoi.add(list)
+            }
+//            Log.d("danhsach",dau[0].toString())
+            binding.dauDuoi = DataDauDuoi(dau,duoi)
 
             val radioGroup = binding.radioGroup
             radioGroup.setOnCheckedChangeListener { _, checkedId ->
@@ -73,7 +146,6 @@ class khung_xo_so_m_b : Fragment() {
                     binding.giai5 = DataThongTinKetQua(rowsLast2Digits[5][0], rowsLast2Digits[5].subList(1, emptyList[5].size))
                     binding.giai6 = DataThongTinKetQua(rowsLast2Digits[6][0], rowsLast2Digits[6].subList(1, emptyList[6].size))
                     binding.giai7 = DataThongTinKetQua(rowsLast2Digits[7][0], rowsLast2Digits[7].subList(1, emptyList[7].size))
-                    binding.giai8 = DataThongTinKetQua(rowsLast2Digits[8][0], rowsLast2Digits[8].subList(1, emptyList[8].size))
 
 
                 }else if (checkedId == R.id.radio_button2) {
@@ -99,7 +171,6 @@ class khung_xo_so_m_b : Fragment() {
                     binding.giai5 = DataThongTinKetQua(rowsLast3Digits[5][0], rowsLast3Digits[5].subList(1, emptyList[5].size))
                     binding.giai6 = DataThongTinKetQua(rowsLast3Digits[6][0], rowsLast3Digits[6].subList(1, emptyList[6].size))
                     binding.giai7 = DataThongTinKetQua(rowsLast3Digits[7][0], rowsLast3Digits[7].subList(1, emptyList[7].size))
-                    binding.giai8 = DataThongTinKetQua(rowsLast3Digits[8][0], rowsLast3Digits[8].subList(1, emptyList[8].size))
 
                 }else {
                     binding.giaiDB = DataThongTinKetQua(emptyList[0][0], emptyList[0].subList(1, emptyList[0].size))
@@ -110,7 +181,6 @@ class khung_xo_so_m_b : Fragment() {
                     binding.giai5 = DataThongTinKetQua(emptyList[5][0], emptyList[5].subList(1, emptyList[5].size))
                     binding.giai6 = DataThongTinKetQua(emptyList[6][0], emptyList[6].subList(1, emptyList[6].size))
                     binding.giai7 = DataThongTinKetQua(emptyList[7][0], emptyList[7].subList(1, emptyList[7].size))
-                    binding.giai8 = DataThongTinKetQua(emptyList[8][0], emptyList[8].subList(1, emptyList[8].size))
                 }
             }
             Log.d("doi","da doi")
@@ -122,7 +192,6 @@ class khung_xo_so_m_b : Fragment() {
             binding.giai5 = DataThongTinKetQua(emptyList[5][0], emptyList[5].subList(1, emptyList[5].size))
             binding.giai6 = DataThongTinKetQua(emptyList[6][0], emptyList[6].subList(1, emptyList[6].size))
             binding.giai7 = DataThongTinKetQua(emptyList[7][0], emptyList[7].subList(1, emptyList[7].size))
-            binding.giai8 = DataThongTinKetQua(emptyList[8][0], emptyList[8].subList(1, emptyList[8].size))
 
         }
 
@@ -134,5 +203,4 @@ class khung_xo_so_m_b : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // Các xử lý khác của phương thức onViewCreated
     }
-
 }

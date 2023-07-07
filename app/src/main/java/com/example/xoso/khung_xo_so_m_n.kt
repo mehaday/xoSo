@@ -31,8 +31,12 @@ class khung_xo_so_m_n : Fragment() {
             inflater, R.layout.fragment_khung_xo_so_m_n, container, false
         )
 
-        val tinh = "bac-lieu"
-        val ngay = "04-07-2023"
+        val ngay = "08-07-2023"
+
+        val lay_gia_tri_test = arguments?.let { khung_xo_so_m_bArgs.fromBundle(it) }
+        binding.tenXoSo.text = lay_gia_tri_test?.tenXoSo
+
+        val tinh = lay_gia_tri_test?.key.toString()
 
         GlobalScope.launch(Dispatchers.Main) {
             val generator = MyDataProcessor()
@@ -46,6 +50,64 @@ class khung_xo_so_m_n : Fragment() {
             // Ví dụ: binding.myTextView.text = emptyList.toString()
             var ketqua = emptyList
             Log.d("ketqua", ketqua.toString())
+
+
+            //xử lý đầu đuôi
+            val transformedItem = mutableListOf<String>()
+            for (item in emptyList) {
+                for (i in 0 until item.size) {
+                    if (i != 0) {
+                        val number = item[i]
+                        val shortenedNumber = number.takeLast(2)
+                        transformedItem.add(shortenedNumber)
+                    }
+                }
+            }
+            Log.d("danhsach", transformedItem.toString())
+            //
+            var a = transformedItem
+            var dau = mutableListOf<List<String>>()
+            for (j in 0..9) {
+                var list = mutableListOf<String>()
+                var text = ""
+                for (i in a) {
+                    var b = j.toString()
+                    if (b == i[0].toString()) {
+                        text = text + i[1].toString() + " , "
+                    }
+                }
+                list.add(j.toString())
+                if (text == "") {
+                    list.add("-")
+                }else {
+                    text = text.dropLast(2)
+                    list.add(text)
+                }
+                dau.add(list)
+            }
+            var duoi = mutableListOf<List<String>>()
+            for (j in 0..9) {
+                var list = mutableListOf<String>()
+                var text = ""
+                for (i in a) {
+                    var b = j.toString()
+                    if (b == i[0].toString()) {
+                        text = text + i[1].toString() + " , "
+                    }
+                }
+                list.add(j.toString())
+                if (text == "") {
+                    list.add("-")
+                }else {
+                    text = text.dropLast(2)
+                    list.add(text)
+                }
+                duoi.add(list)
+            }
+//            Log.d("danhsach",dau[0].toString())
+            binding.dauDuoi = DataDauDuoi(dau,duoi)
+
+
 
             val radioGroup = binding.radioGroup
             radioGroup.setOnCheckedChangeListener { _, checkedId ->

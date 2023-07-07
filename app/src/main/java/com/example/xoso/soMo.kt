@@ -45,7 +45,7 @@ class soMo : Fragment() {
         if (iterator.hasNext()) iterator.next() // Bỏ qua phần tử đầu tiên
         while (iterator.hasNext()) {
             val (key, value) = iterator.next()
-            list.add(list_hom_nay(R.drawable.dream, key, "Cặp số tương ứng: $value"))
+            list.add(list_hom_nay(R.drawable.dream, key, "Cặp số tương ứng: $value",""))
         }
 
         originalList.addAll(list) // Sao chép nội dung vào danh sách gốc

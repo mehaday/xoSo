@@ -13,6 +13,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.xoso.databinding.FragmentKetQuaBinding
+import com.example.xoso.databinding.FragmentKetQuaDaiBinding
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -23,9 +26,9 @@ class ketQua : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_ket_qua, container, false)
-        val tableLayout = view.findViewById<LinearLayout>(R.id.tableLayout)
-
-        return view
+        var binding : FragmentKetQuaBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_ket_qua, container,false
+        )
+        return binding.root
     }
 }
