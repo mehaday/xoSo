@@ -26,8 +26,8 @@ class ketQua : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var binding : FragmentKetQuaBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_ket_qua, container,false
+        var binding: FragmentKetQuaBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_ket_qua, container, false
         )
         return binding.root
     }

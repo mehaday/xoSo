@@ -23,7 +23,7 @@ class soMo : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding: FragmentSoMoBinding = DataBindingUtil.inflate(
-            inflater , R.layout.fragment_so_mo , container , false
+            inflater, R.layout.fragment_so_mo, container, false
         )
         val gson = Gson()
 
@@ -45,7 +45,7 @@ class soMo : Fragment() {
         if (iterator.hasNext()) iterator.next() // Bỏ qua phần tử đầu tiên
         while (iterator.hasNext()) {
             val (key, value) = iterator.next()
-            list.add(list_hom_nay(R.drawable.dream, key, "Cặp số tương ứng: $value",""))
+            list.add(list_hom_nay(R.drawable.dream, key, "Cặp số tương ứng: $value", ""))
         }
 
         originalList.addAll(list) // Sao chép nội dung vào danh sách gốc
@@ -59,6 +59,7 @@ class soMo : Fragment() {
                 //xử lý khi ấn tìm kiếm
                 return false
             }
+
             override fun onQueryTextChange(newText: String): Boolean {
                 // xử lý khi nhập ( nội dung ô tìm kiếm thay đổi )
                 val filteredList = originalList.filter { item ->

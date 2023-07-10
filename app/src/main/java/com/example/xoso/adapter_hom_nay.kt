@@ -7,7 +7,8 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class adapter_hom_nay(val activity: Activity, var list: List<list_hom_nay>) : ArrayAdapter<list_hom_nay>(activity, R.layout.list_hom_nay) {
+class adapter_hom_nay(val activity: Activity, var list: List<list_hom_nay>) :
+    ArrayAdapter<list_hom_nay>(activity, R.layout.list_hom_nay) {
     override fun getCount(): Int {
         return list.size
     }

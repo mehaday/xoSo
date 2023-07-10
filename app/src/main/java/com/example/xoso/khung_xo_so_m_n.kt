@@ -24,6 +24,7 @@ class khung_xo_so_m_n : Fragment() {
     private val rowsLast3Digits: MutableList<List<String>> = mutableListOf()
     private var rowsLast4Digits: MutableList<List<String>> = mutableListOf()
     private val rowsLast2Digits: MutableList<List<String>> = mutableListOf()
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -89,7 +90,7 @@ class khung_xo_so_m_n : Fragment() {
                 list.add(j.toString())
                 if (text == "") {
                     list.add("-")
-                }else {
+                } else {
                     text = text.dropLast(2)
                     list.add(text)
                 }
@@ -108,15 +109,14 @@ class khung_xo_so_m_n : Fragment() {
                 list.add(j.toString())
                 if (text == "") {
                     list.add("-")
-                }else {
+                } else {
                     text = text.dropLast(2)
                     list.add(text)
                 }
                 duoi.add(list)
             }
 //            Log.d("danhsach",dau[0].toString())
-            binding.dauDuoi = DataDauDuoi(dau,duoi)
-
+            binding.dauDuoi = DataDauDuoi(dau, duoi)
 
 
             val radioGroup = binding.radioGroup
@@ -135,19 +135,46 @@ class khung_xo_so_m_n : Fragment() {
                         }
                         rowsLast2Digits.add(transformedItem)
                     }
-                    Log.d("ketqua",rowsLast2Digits.toString())
-                    binding.giaiDB = DataThongTinKetQua(rowsLast2Digits[0][0], rowsLast2Digits[0].subList(1, emptyList[0].size))
-                    binding.giai1 = DataThongTinKetQua(rowsLast2Digits[1][0], rowsLast2Digits[1].subList(1, emptyList[1].size))
-                    binding.giai2 = DataThongTinKetQua(rowsLast2Digits[2][0], rowsLast2Digits[2].subList(1, emptyList[2].size))
-                    binding.giai3 = DataThongTinKetQua(rowsLast2Digits[3][0], rowsLast2Digits[3].subList(1, emptyList[3].size))
-                    binding.giai4 = DataThongTinKetQua(rowsLast2Digits[4][0], rowsLast2Digits[4].subList(1, emptyList[4].size))
-                    binding.giai5 = DataThongTinKetQua(rowsLast2Digits[5][0], rowsLast2Digits[5].subList(1, emptyList[5].size))
-                    binding.giai6 = DataThongTinKetQua(rowsLast2Digits[6][0], rowsLast2Digits[6].subList(1, emptyList[6].size))
-                    binding.giai7 = DataThongTinKetQua(rowsLast2Digits[7][0], rowsLast2Digits[7].subList(1, emptyList[7].size))
-                    binding.giai8 = DataThongTinKetQua(rowsLast2Digits[8][0], rowsLast2Digits[8].subList(1, emptyList[8].size))
+                    Log.d("ketqua", rowsLast2Digits.toString())
+                    binding.giaiDB = DataThongTinKetQua(
+                        rowsLast2Digits[0][0],
+                        rowsLast2Digits[0].subList(1, emptyList[0].size)
+                    )
+                    binding.giai1 = DataThongTinKetQua(
+                        rowsLast2Digits[1][0],
+                        rowsLast2Digits[1].subList(1, emptyList[1].size)
+                    )
+                    binding.giai2 = DataThongTinKetQua(
+                        rowsLast2Digits[2][0],
+                        rowsLast2Digits[2].subList(1, emptyList[2].size)
+                    )
+                    binding.giai3 = DataThongTinKetQua(
+                        rowsLast2Digits[3][0],
+                        rowsLast2Digits[3].subList(1, emptyList[3].size)
+                    )
+                    binding.giai4 = DataThongTinKetQua(
+                        rowsLast2Digits[4][0],
+                        rowsLast2Digits[4].subList(1, emptyList[4].size)
+                    )
+                    binding.giai5 = DataThongTinKetQua(
+                        rowsLast2Digits[5][0],
+                        rowsLast2Digits[5].subList(1, emptyList[5].size)
+                    )
+                    binding.giai6 = DataThongTinKetQua(
+                        rowsLast2Digits[6][0],
+                        rowsLast2Digits[6].subList(1, emptyList[6].size)
+                    )
+                    binding.giai7 = DataThongTinKetQua(
+                        rowsLast2Digits[7][0],
+                        rowsLast2Digits[7].subList(1, emptyList[7].size)
+                    )
+                    binding.giai8 = DataThongTinKetQua(
+                        rowsLast2Digits[8][0],
+                        rowsLast2Digits[8].subList(1, emptyList[8].size)
+                    )
 
 
-                }else if (checkedId == R.id.radio_button2) {
+                } else if (checkedId == R.id.radio_button2) {
                     for (item in emptyList) {
                         val transformedItem = mutableListOf<String>()
                         for (i in 0 until item.size) {
@@ -161,39 +188,102 @@ class khung_xo_so_m_n : Fragment() {
                         }
                         rowsLast3Digits.add(transformedItem)
                     }
-                    Log.d("ketqua",rowsLast3Digits.toString())
-                    binding.giaiDB = DataThongTinKetQua(rowsLast3Digits[0][0], rowsLast3Digits[0].subList(1, emptyList[0].size))
-                    binding.giai1 = DataThongTinKetQua(rowsLast3Digits[1][0], rowsLast3Digits[1].subList(1, emptyList[1].size))
-                    binding.giai2 = DataThongTinKetQua(rowsLast3Digits[2][0], rowsLast3Digits[2].subList(1, emptyList[2].size))
-                    binding.giai3 = DataThongTinKetQua(rowsLast3Digits[3][0], rowsLast3Digits[3].subList(1, emptyList[3].size))
-                    binding.giai4 = DataThongTinKetQua(rowsLast3Digits[4][0], rowsLast3Digits[4].subList(1, emptyList[4].size))
-                    binding.giai5 = DataThongTinKetQua(rowsLast3Digits[5][0], rowsLast3Digits[5].subList(1, emptyList[5].size))
-                    binding.giai6 = DataThongTinKetQua(rowsLast3Digits[6][0], rowsLast3Digits[6].subList(1, emptyList[6].size))
-                    binding.giai7 = DataThongTinKetQua(rowsLast3Digits[7][0], rowsLast3Digits[7].subList(1, emptyList[7].size))
-                    binding.giai8 = DataThongTinKetQua(rowsLast3Digits[8][0], rowsLast3Digits[8].subList(1, emptyList[8].size))
+                    Log.d("ketqua", rowsLast3Digits.toString())
+                    binding.giaiDB = DataThongTinKetQua(
+                        rowsLast3Digits[0][0],
+                        rowsLast3Digits[0].subList(1, emptyList[0].size)
+                    )
+                    binding.giai1 = DataThongTinKetQua(
+                        rowsLast3Digits[1][0],
+                        rowsLast3Digits[1].subList(1, emptyList[1].size)
+                    )
+                    binding.giai2 = DataThongTinKetQua(
+                        rowsLast3Digits[2][0],
+                        rowsLast3Digits[2].subList(1, emptyList[2].size)
+                    )
+                    binding.giai3 = DataThongTinKetQua(
+                        rowsLast3Digits[3][0],
+                        rowsLast3Digits[3].subList(1, emptyList[3].size)
+                    )
+                    binding.giai4 = DataThongTinKetQua(
+                        rowsLast3Digits[4][0],
+                        rowsLast3Digits[4].subList(1, emptyList[4].size)
+                    )
+                    binding.giai5 = DataThongTinKetQua(
+                        rowsLast3Digits[5][0],
+                        rowsLast3Digits[5].subList(1, emptyList[5].size)
+                    )
+                    binding.giai6 = DataThongTinKetQua(
+                        rowsLast3Digits[6][0],
+                        rowsLast3Digits[6].subList(1, emptyList[6].size)
+                    )
+                    binding.giai7 = DataThongTinKetQua(
+                        rowsLast3Digits[7][0],
+                        rowsLast3Digits[7].subList(1, emptyList[7].size)
+                    )
+                    binding.giai8 = DataThongTinKetQua(
+                        rowsLast3Digits[8][0],
+                        rowsLast3Digits[8].subList(1, emptyList[8].size)
+                    )
 
-                }else {
-                    binding.giaiDB = DataThongTinKetQua(emptyList[0][0], emptyList[0].subList(1, emptyList[0].size))
-                    binding.giai1 = DataThongTinKetQua(emptyList[1][0], emptyList[1].subList(1, emptyList[1].size))
-                    binding.giai2 = DataThongTinKetQua(emptyList[2][0], emptyList[2].subList(1, emptyList[2].size))
-                    binding.giai3 = DataThongTinKetQua(emptyList[3][0], emptyList[3].subList(1, emptyList[3].size))
-                    binding.giai4 = DataThongTinKetQua(emptyList[4][0], emptyList[4].subList(1, emptyList[4].size))
-                    binding.giai5 = DataThongTinKetQua(emptyList[5][0], emptyList[5].subList(1, emptyList[5].size))
-                    binding.giai6 = DataThongTinKetQua(emptyList[6][0], emptyList[6].subList(1, emptyList[6].size))
-                    binding.giai7 = DataThongTinKetQua(emptyList[7][0], emptyList[7].subList(1, emptyList[7].size))
-                    binding.giai8 = DataThongTinKetQua(emptyList[8][0], emptyList[8].subList(1, emptyList[8].size))
+                } else {
+                    binding.giaiDB = DataThongTinKetQua(
+                        emptyList[0][0],
+                        emptyList[0].subList(1, emptyList[0].size)
+                    )
+                    binding.giai1 = DataThongTinKetQua(
+                        emptyList[1][0],
+                        emptyList[1].subList(1, emptyList[1].size)
+                    )
+                    binding.giai2 = DataThongTinKetQua(
+                        emptyList[2][0],
+                        emptyList[2].subList(1, emptyList[2].size)
+                    )
+                    binding.giai3 = DataThongTinKetQua(
+                        emptyList[3][0],
+                        emptyList[3].subList(1, emptyList[3].size)
+                    )
+                    binding.giai4 = DataThongTinKetQua(
+                        emptyList[4][0],
+                        emptyList[4].subList(1, emptyList[4].size)
+                    )
+                    binding.giai5 = DataThongTinKetQua(
+                        emptyList[5][0],
+                        emptyList[5].subList(1, emptyList[5].size)
+                    )
+                    binding.giai6 = DataThongTinKetQua(
+                        emptyList[6][0],
+                        emptyList[6].subList(1, emptyList[6].size)
+                    )
+                    binding.giai7 = DataThongTinKetQua(
+                        emptyList[7][0],
+                        emptyList[7].subList(1, emptyList[7].size)
+                    )
+                    binding.giai8 = DataThongTinKetQua(
+                        emptyList[8][0],
+                        emptyList[8].subList(1, emptyList[8].size)
+                    )
                 }
             }
-            Log.d("doi","da doi")
-            binding.giaiDB = DataThongTinKetQua(emptyList[0][0], emptyList[0].subList(1, emptyList[0].size))
-            binding.giai1 = DataThongTinKetQua(emptyList[1][0], emptyList[1].subList(1, emptyList[1].size))
-            binding.giai2 = DataThongTinKetQua(emptyList[2][0], emptyList[2].subList(1, emptyList[2].size))
-            binding.giai3 = DataThongTinKetQua(emptyList[3][0], emptyList[3].subList(1, emptyList[3].size))
-            binding.giai4 = DataThongTinKetQua(emptyList[4][0], emptyList[4].subList(1, emptyList[4].size))
-            binding.giai5 = DataThongTinKetQua(emptyList[5][0], emptyList[5].subList(1, emptyList[5].size))
-            binding.giai6 = DataThongTinKetQua(emptyList[6][0], emptyList[6].subList(1, emptyList[6].size))
-            binding.giai7 = DataThongTinKetQua(emptyList[7][0], emptyList[7].subList(1, emptyList[7].size))
-            binding.giai8 = DataThongTinKetQua(emptyList[8][0], emptyList[8].subList(1, emptyList[8].size))
+            Log.d("doi", "da doi")
+            binding.giaiDB =
+                DataThongTinKetQua(emptyList[0][0], emptyList[0].subList(1, emptyList[0].size))
+            binding.giai1 =
+                DataThongTinKetQua(emptyList[1][0], emptyList[1].subList(1, emptyList[1].size))
+            binding.giai2 =
+                DataThongTinKetQua(emptyList[2][0], emptyList[2].subList(1, emptyList[2].size))
+            binding.giai3 =
+                DataThongTinKetQua(emptyList[3][0], emptyList[3].subList(1, emptyList[3].size))
+            binding.giai4 =
+                DataThongTinKetQua(emptyList[4][0], emptyList[4].subList(1, emptyList[4].size))
+            binding.giai5 =
+                DataThongTinKetQua(emptyList[5][0], emptyList[5].subList(1, emptyList[5].size))
+            binding.giai6 =
+                DataThongTinKetQua(emptyList[6][0], emptyList[6].subList(1, emptyList[6].size))
+            binding.giai7 =
+                DataThongTinKetQua(emptyList[7][0], emptyList[7].subList(1, emptyList[7].size))
+            binding.giai8 =
+                DataThongTinKetQua(emptyList[8][0], emptyList[8].subList(1, emptyList[8].size))
 
         }
 
