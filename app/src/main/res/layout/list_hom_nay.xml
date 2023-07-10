@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textColor="#EE000000"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView21"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textColor="#636363"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="italic" />
     </LinearLayout>
 

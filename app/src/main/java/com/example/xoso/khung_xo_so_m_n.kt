@@ -16,6 +16,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 class khung_xo_so_m_n : Fragment() {
@@ -32,6 +34,15 @@ class khung_xo_so_m_n : Fragment() {
         )
 
         val ngay = "08-07-2023"
+        val currentDate = LocalDate.now()
+        // Trừ đi 1 ngày
+        val previousDate = currentDate.minusDays(1)
+        // Định dạng lại ngày thành chuỗi
+        val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        val formattedDate = previousDate.format(formatter)
+
+        binding.textView2.text = formattedDate
+
 
         val lay_gia_tri_test = arguments?.let { khung_xo_so_m_bArgs.fromBundle(it) }
         binding.tenXoSo.text = lay_gia_tri_test?.tenXoSo
@@ -41,7 +52,7 @@ class khung_xo_so_m_n : Fragment() {
         GlobalScope.launch(Dispatchers.Main) {
             val generator = MyDataProcessor()
             val emptyList = withContext(Dispatchers.IO) {
-                generator.getEmptyList(tinh, ngay)
+                generator.getEmptyList(tinh, formattedDate)
             }
 
             // Sử dụng kết quả emptyList theo nhu cầu

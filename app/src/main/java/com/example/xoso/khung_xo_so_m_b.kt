@@ -43,8 +43,11 @@ class khung_xo_so_m_b : Fragment() {
         //
         //lấy ngày hiện tại
         val currentDate = LocalDate.now()
+        // Trừ đi 1 ngày
+        val previousDate = currentDate.minusDays(1)
+        // Định dạng lại ngày thành chuỗi
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-        val formattedDate = currentDate.format(formatter)
+        val formattedDate = previousDate.format(formatter)
         //tỉnh
         val tinh = lay_gia_tri_test?.key.toString()
 

@@ -101,7 +101,7 @@
     <fragment
         android:id="@+id/soMo3"
         android:name="com.example.xoso.soMo"
-        android:label="soMo" />
+        android:label="Sổ mơ" />
     <fragment
         android:id="@+id/khung_xo_so_m_n"
         android:name="com.example.xoso.khung_xo_so_m_n"
