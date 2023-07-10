@@ -33,7 +33,6 @@ class khung_xo_so_m_n : Fragment() {
             inflater, R.layout.fragment_khung_xo_so_m_n, container, false
         )
 
-        val ngay = "08-07-2023"
         val currentDate = LocalDate.now()
         // Trừ đi 1 ngày
         val previousDate = currentDate.minusDays(1)

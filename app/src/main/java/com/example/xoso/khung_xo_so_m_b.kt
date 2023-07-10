@@ -55,7 +55,7 @@ class khung_xo_so_m_b : Fragment() {
         Log.d("xinchao",lay_gia_tri_test?.key.toString())
         //
 
-        binding.textView2.text = "${dayOfWeek} $formattedDate"
+        binding.textView2.text = "$formattedDate"
         GlobalScope.launch(Dispatchers.Main) {
             val generator = MyDataProcessor()
             val emptyList = withContext(Dispatchers.IO) {

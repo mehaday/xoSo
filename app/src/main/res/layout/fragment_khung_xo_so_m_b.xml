@@ -44,7 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/ten_xo_so"
@@ -69,7 +70,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/lightgray">
+                android:paddingTop="0.5dp"
+                android:background="@drawable/table_row_border_gray">
 
                 <TextView
                     android:id="@+id/textView36"
@@ -78,7 +80,8 @@
                     android:text="@{giaiDB.tenGiai}"
                     android:layout_weight="1"
                     android:textColor="@color/red"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -92,13 +95,15 @@
                         android:layout_height="wrap_content"
                         android:text="@{giaiDB.ketQuaGiai[0]}"
                         android:gravity="center"
-                        android:textColor="@color/red"/>
+                        android:textColor="@color/red"
+                        android:background="@drawable/textview_border"/>
                 </LinearLayout>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:background="@drawable/table_row_border">
 
                 <TextView
                     android:id="@+id/textView37"
@@ -106,7 +111,8 @@
                     android:layout_height="match_parent"
                     android:text="@{giai1.tenGiai}"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -119,14 +125,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{giai1.ketQuaGiai[0]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
                 </LinearLayout>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/lightgray">
+                android:background="@drawable/table_row_border_gray">
 
                 <TextView
                     android:id="@+id/textView38"
@@ -134,7 +141,8 @@
                     android:layout_height="match_parent"
                     android:text="@{giai2.tenGiai}"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -148,7 +156,8 @@
                         android:layout_height="wrap_content"
                         android:text="@{giai2.ketQuaGiai[0]}"
                         android:layout_weight="1"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView47"
@@ -156,13 +165,15 @@
                         android:layout_height="wrap_content"
                         android:text="@{giai2.ketQuaGiai[1]}"
                         android:layout_weight="1"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
                 </LinearLayout>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:background="@drawable/table_row_border">
 
                 <TextView
                     android:id="@+id/textView39"
@@ -170,7 +181,8 @@
                     android:layout_height="match_parent"
                     android:text="@{giai3.tenGiai}"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -185,27 +197,30 @@
 
                         <TextView
                             android:id="@+id/textView51"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai3.ketQuaGiai[0]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView52"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai3.ketQuaGiai[1]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView53"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai3.ketQuaGiai[2]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -215,27 +230,30 @@
 
                         <TextView
                             android:id="@+id/textView54"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai3.ketQuaGiai[3]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView55"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai3.ketQuaGiai[4]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView56"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai3.ketQuaGiai[5]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
                     </LinearLayout>
                 </LinearLayout>
             </TableRow>
@@ -243,7 +261,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/lightgray">
+                android:background="@drawable/table_row_border_gray">
 
                 <TextView
                     android:id="@+id/textView40"
@@ -251,7 +269,8 @@
                     android:layout_height="match_parent"
                     android:text="@{giai4.tenGiai}"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -261,41 +280,46 @@
 
                     <TextView
                         android:id="@+id/textView57"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@{giai4.ketQuaGiai[0]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView58"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@{giai4.ketQuaGiai[1]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView59"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@{giai4.ketQuaGiai[2]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView60"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@{giai4.ketQuaGiai[3]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
                 </LinearLayout>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:background="@drawable/table_row_border">
 
                 <TextView
                     android:id="@+id/textView41"
@@ -303,7 +327,8 @@
                     android:layout_height="match_parent"
                     android:text="@{giai5.tenGiai}"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -318,27 +343,30 @@
 
                         <TextView
                             android:id="@+id/textView61"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai5.ketQuaGiai[0]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView62"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai5.ketQuaGiai[1]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView63"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai5.ketQuaGiai[2]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -348,27 +376,30 @@
 
                         <TextView
                             android:id="@+id/textView64"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai5.ketQuaGiai[3]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView65"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai5.ketQuaGiai[4]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
 
                         <TextView
                             android:id="@+id/textView66"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@{giai5.ketQuaGiai[5]}"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/textview_border"/>
                     </LinearLayout>
                 </LinearLayout>
             </TableRow>
@@ -376,7 +407,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/lightgray">
+                android:background="@drawable/table_row_border_gray">
 
                 <TextView
                     android:id="@+id/textView42"
@@ -384,7 +415,8 @@
                     android:layout_height="match_parent"
                     android:text="@{giai6.tenGiai}"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -394,33 +426,37 @@
 
                     <TextView
                         android:id="@+id/textView67"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@{giai6.ketQuaGiai[0]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView68"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@{giai6.ketQuaGiai[1]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView69"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@{giai6.ketQuaGiai[2]}"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/textview_border"/>
                 </LinearLayout>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:background="@drawable/table_row_border">
 
                 <TextView
                     android:id="@+id/textView43"
@@ -429,7 +465,8 @@
                     android:text="@{giai7.tenGiai}"
                     android:layout_weight="1"
                     android:textColor="@color/red"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                android:background="@drawable/textview_border"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -444,7 +481,8 @@
                         android:layout_weight="1"
                         android:text="@{giai7.ketQuaGiai[0]}"
                         android:gravity="center"
-                        android:textColor="@color/red"/>
+                        android:textColor="@color/red"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView71"
@@ -453,7 +491,8 @@
                         android:layout_weight="1"
                         android:text="@{giai7.ketQuaGiai[1]}"
                         android:gravity="center"
-                        android:textColor="@color/red"/>
+                        android:textColor="@color/red"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView72"
@@ -462,7 +501,8 @@
                         android:layout_weight="1"
                         android:text="@{giai7.ketQuaGiai[2]}"
                         android:gravity="center"
-                        android:textColor="@color/red"/>
+                        android:textColor="@color/red"
+                        android:background="@drawable/textview_border"/>
 
                     <TextView
                         android:id="@+id/textView73"
@@ -471,22 +511,26 @@
                         android:layout_weight="1"
                         android:text="@{giai7.ketQuaGiai[3]}"
                         android:gravity="center"
-                        android:textColor="@color/red"/>
+                        android:textColor="@color/red"
+                        android:background="@drawable/textview_border"/>
                 </LinearLayout>
             </TableRow>
         </TableLayout>
+
         <RadioGroup
             android:id="@+id/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="1dp"
+            android:background="@drawable/textview_white">
 
             <RadioButton
                 android:id="@+id/radio_button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2 số"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="2 số" />
 
             <RadioButton
                 android:id="@+id/radio_button2"
@@ -514,7 +558,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="4dp"/>
+            android:layout_marginBottom="6dp"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -532,7 +576,9 @@
                     android:layout_height="wrap_content"
                     android:text="đầu"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:paddingTop="0.5dp"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView75"
@@ -540,7 +586,8 @@
                     android:layout_height="wrap_content"
                     android:text="đuôi"
                     android:gravity="center"
-                    android:layout_weight="5"/>
+                    android:layout_weight="5"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView76"
@@ -548,7 +595,8 @@
                     android:layout_height="wrap_content"
                     android:text="đầu"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView77"
@@ -556,7 +604,8 @@
                     android:layout_height="wrap_content"
                     android:text="đuôi"
                     android:gravity="center"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/textview_white"/>
             </TableRow>
 
             <TableRow
@@ -571,7 +620,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border" />
 
                 <TextView
                     android:id="@+id/textView79"
@@ -579,7 +629,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[0][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView80"
@@ -587,7 +638,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="5"
                     android:gravity="center"
-                    android:text="@{dauDuoi.duoi[0][1]}" />
+                    android:text="@{dauDuoi.duoi[0][1]}"
+                    android:background="@drawable/textview_border" />
 
                 <TextView
                     android:id="@+id/textView81"
@@ -596,7 +648,8 @@
                     android:layout_weight="1"
                     android:text="0"
                     android:gravity="center"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
             </TableRow>
 
             <TableRow
@@ -611,7 +664,8 @@
                     android:text="1"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView83"
@@ -619,7 +673,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:text="@{dauDuoi.dau[1][1]}"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:background="@drawable/textview_white" />
 
                 <TextView
                     android:id="@+id/textView84"
@@ -627,7 +682,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[1][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView85"
@@ -636,7 +692,8 @@
                     android:text="1"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
             </TableRow>
 
             <TableRow
@@ -651,7 +708,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView88"
@@ -659,7 +717,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[2][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView87"
@@ -667,7 +726,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[2][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView89"
@@ -676,7 +736,8 @@
                     android:text="2"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
 
             </TableRow>
 
@@ -692,7 +753,8 @@
                     android:text="3"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView91"
@@ -700,7 +762,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[3][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView92"
@@ -708,7 +771,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[3][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView93"
@@ -717,7 +781,8 @@
                     android:text="3"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
             </TableRow>
 
             <TableRow
@@ -732,7 +797,8 @@
                     android:text="4"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView95"
@@ -740,7 +806,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[4][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView96"
@@ -748,7 +815,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[4][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView97"
@@ -757,7 +825,8 @@
                     android:text="4"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
             </TableRow>
 
             <TableRow
@@ -772,7 +841,8 @@
                     android:text="5"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView99"
@@ -780,7 +850,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[5][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView101"
@@ -788,7 +859,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[5][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView100"
@@ -797,7 +869,8 @@
                     android:text="5"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
             </TableRow>
 
             <TableRow
@@ -812,7 +885,8 @@
                     android:text="6"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView103"
@@ -820,7 +894,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[6][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView104"
@@ -828,7 +903,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="5"
                     android:gravity="center"
-                    android:text="@{dauDuoi.duoi[6][1]}" />
+                    android:text="@{dauDuoi.duoi[6][1]}"
+                    android:background="@drawable/textview_border" />
 
                 <TextView
                     android:id="@+id/textView105"
@@ -837,7 +913,8 @@
                     android:text="6"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
             </TableRow>
 
             <TableRow
@@ -852,7 +929,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="7"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView107"
@@ -860,7 +938,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[7][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView108"
@@ -868,7 +947,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[7][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView109"
@@ -877,7 +957,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="7"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
             </TableRow>
 
             <TableRow
@@ -892,7 +973,8 @@
                     android:text="8"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView111"
@@ -900,7 +982,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[8][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView112"
@@ -908,7 +991,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[8][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_border"/>
 
                 <TextView
                     android:id="@+id/textView113"
@@ -917,7 +1001,8 @@
                     android:text="8"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_border"/>
             </TableRow>
 
             <TableRow
@@ -932,7 +1017,8 @@
                     android:text="9"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView115"
@@ -940,7 +1026,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.dau[9][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView117"
@@ -948,7 +1035,8 @@
                     android:layout_height="wrap_content"
                     android:text="@{dauDuoi.duoi[9][1]}"
                     android:layout_weight="5"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:background="@drawable/textview_white"/>
 
                 <TextView
                     android:id="@+id/textView116"
@@ -957,7 +1045,8 @@
                     android:text="9"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red"
+                    android:background="@drawable/textview_white"/>
             </TableRow>
         </TableLayout>
     </LinearLayout>
