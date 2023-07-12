@@ -51,12 +51,12 @@
     </fragment>
     <fragment
         android:id="@+id/ketQua"
-        android:name="com.example.xoso.ketQua"
+        android:name="com.example.xoso.Result"
         android:label="fragment_ket_qua"
-        tools:layout="@layout/fragment_ket_qua" />
+        tools:layout="@layout/fragment_result" />
     <fragment
         android:id="@+id/homNay"
-        android:name="com.example.xoso.homNay"
+        android:name="com.example.xoso.Daily"
         android:label="Hôm nay">
         <action
             android:id="@+id/action_homNay_to_khung_xo_so_m_b"
@@ -87,9 +87,9 @@
     </fragment>
     <fragment
         android:id="@+id/khung_xo_so_m_b"
-        android:name="com.example.xoso.khung_xo_so_m_b"
+        android:name="com.example.xoso.NorthernLottery"
         android:label="Kết quả xổ số Miền Bắc"
-        tools:layout="@layout/fragment_khung_xo_so_m_b">
+        tools:layout="@layout/fragment_northern_lottery">
         <argument
             android:name="tenXoSo"
             android:defaultValue="xổ số"
@@ -104,7 +104,7 @@
         android:label="Sổ mơ" />
     <fragment
         android:id="@+id/khung_xo_so_m_n"
-        android:name="com.example.xoso.khung_xo_so_m_n"
+        android:name="com.example.xoso.SouthernLottery"
         android:label="Kết quả xổ số Miền Nam" >
         <argument
             android:name="tenXoSo"

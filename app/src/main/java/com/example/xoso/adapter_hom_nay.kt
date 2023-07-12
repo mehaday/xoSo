@@ -7,8 +7,8 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class adapter_hom_nay(val activity: Activity, var list: List<list_hom_nay>) :
-    ArrayAdapter<list_hom_nay>(activity, R.layout.list_hom_nay) {
+class adapter_hom_nay(val activity: Activity, var list: List<ListDaily>) :
+    ArrayAdapter<ListDaily>(activity, R.layout.list_hom_nay) {
     override fun getCount(): Int {
         return list.size
     }
@@ -28,7 +28,7 @@ class adapter_hom_nay(val activity: Activity, var list: List<list_hom_nay>) :
         return rowView
     }
 
-    fun updateData(newList: List<list_hom_nay>) {
+    fun updateData(newList: List<ListDaily>) {
         list = newList
         notifyDataSetChanged()
     }

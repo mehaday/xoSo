@@ -15,7 +15,7 @@ import java.io.File
 
 class soMo : Fragment() {
     lateinit var adapterket_so_mo: adapter_hom_nay
-    lateinit var originalList: MutableList<list_hom_nay> // Danh sách gốc
+    lateinit var originalList: MutableList<ListDaily> // Danh sách gốc
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,14 +38,14 @@ class soMo : Fragment() {
 
         originalList = mutableListOf() // Khởi tạo danh sách gốc
 
-        var list = mutableListOf<list_hom_nay>()
+        var list = mutableListOf<ListDaily>()
 
         // Sử dụng dữ liệu đã đọc
         val iterator = dataList.entries.iterator()
         if (iterator.hasNext()) iterator.next() // Bỏ qua phần tử đầu tiên
         while (iterator.hasNext()) {
             val (key, value) = iterator.next()
-            list.add(list_hom_nay(R.drawable.dream, key, "Cặp số tương ứng: $value", ""))
+            list.add(ListDaily(R.drawable.dream, key, "Cặp số tương ứng: $value", ""))
         }
 
         originalList.addAll(list) // Sao chép nội dung vào danh sách gốc
