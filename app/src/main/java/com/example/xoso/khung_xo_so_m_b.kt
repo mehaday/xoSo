@@ -84,180 +84,90 @@ class khung_xo_so_m_b : Fragment() {
             Log.d("danhsach", transformedItem.toString())
             //
             var a = transformedItem
-            var dau = mutableListOf<List<String>>()
+            val dau = mutableListOf<List<String>>()
+            val duoi = mutableListOf<List<String>>()
             for (j in 0..9) {
-                var list = mutableListOf<String>()
+                val list = mutableListOf<String>()
+                val list2 = mutableListOf<String>()
                 var text = ""
+                var text2 = ""
                 for (i in a) {
-                    var b = j.toString()
+                    val b = j.toString()
                     if (b == i[0].toString()) {
-                        text = text + i[1].toString() + " , "
+                        text += "${i[1]}, "
+                    }
+                    if (b == i[1].toString()) {
+                        text2 += "${i[0]}, "
                     }
                 }
                 list.add(j.toString())
-                if (text == "") {
-                    list.add("-")
-                } else {
-                    text = text.dropLast(2)
-                    list.add(text)
-                }
+                list2.add(j.toString())
+                list.add(if (text.isEmpty()) "-" else text.dropLast(2))
+                list2.add(if (text2.isEmpty()) "-" else text2.dropLast(2))
                 dau.add(list)
+                duoi.add(list2)
             }
-            var duoi = mutableListOf<List<String>>()
-            for (j in 0..9) {
-                var list = mutableListOf<String>()
-                var text = ""
-                for (i in a) {
-                    var b = j.toString()
-                    if (b == i[0].toString()) {
-                        text = text + i[1].toString() + " , "
-                    }
-                }
-                list.add(j.toString())
-                if (text == "") {
-                    list.add("-")
-                } else {
-                    text = text.dropLast(2)
-                    list.add(text)
-                }
-                duoi.add(list)
-            }
+
 //            Log.d("danhsach",dau[0].toString())
             binding.dauDuoi = DataDauDuoi(dau, duoi)
 
+
             val radioGroup = binding.radioGroup
             radioGroup.setOnCheckedChangeListener { _, checkedId ->
-                if (checkedId == R.id.radio_button1) {
-                    for (item in emptyList) {
-                        val transformedItem = mutableListOf<String>()
-                        for (i in 0 until item.size) {
-                            if (i == 0) {
-                                transformedItem.add(item[i].toString())
-                            } else {
-                                val number = item[i].toString()
-                                val shortenedNumber = number.takeLast(2)
-                                transformedItem.add(shortenedNumber)
-                            }
-                        }
-                        rowsLast2Digits.add(transformedItem)
-                    }
-                    Log.d("ketqua", rowsLast2Digits.toString())
-                    binding.giaiDB = DataThongTinKetQua(
-                        rowsLast2Digits[0][0],
-                        rowsLast2Digits[0].subList(1, emptyList[0].size)
-                    )
-                    binding.giai1 = DataThongTinKetQua(
-                        rowsLast2Digits[1][0],
-                        rowsLast2Digits[1].subList(1, emptyList[1].size)
-                    )
-                    binding.giai2 = DataThongTinKetQua(
-                        rowsLast2Digits[2][0],
-                        rowsLast2Digits[2].subList(1, emptyList[2].size)
-                    )
-                    binding.giai3 = DataThongTinKetQua(
-                        rowsLast2Digits[3][0],
-                        rowsLast2Digits[3].subList(1, emptyList[3].size)
-                    )
-                    binding.giai4 = DataThongTinKetQua(
-                        rowsLast2Digits[4][0],
-                        rowsLast2Digits[4].subList(1, emptyList[4].size)
-                    )
-                    binding.giai5 = DataThongTinKetQua(
-                        rowsLast2Digits[5][0],
-                        rowsLast2Digits[5].subList(1, emptyList[5].size)
-                    )
-                    binding.giai6 = DataThongTinKetQua(
-                        rowsLast2Digits[6][0],
-                        rowsLast2Digits[6].subList(1, emptyList[6].size)
-                    )
-                    binding.giai7 = DataThongTinKetQua(
-                        rowsLast2Digits[7][0],
-                        rowsLast2Digits[7].subList(1, emptyList[7].size)
-                    )
-
-
-                } else if (checkedId == R.id.radio_button2) {
-                    for (item in emptyList) {
-                        val transformedItem = mutableListOf<String>()
-                        for (i in 0 until item.size) {
-                            if (i == 0) {
-                                transformedItem.add(item[i].toString())
-                            } else {
-                                val number = item[i].toString()
-                                val shortenedNumber = number.takeLast(3)
-                                transformedItem.add(shortenedNumber)
-                            }
-                        }
-                        rowsLast3Digits.add(transformedItem)
-                    }
-                    Log.d("ketqua", rowsLast3Digits.toString())
-                    binding.giaiDB = DataThongTinKetQua(
-                        rowsLast3Digits[0][0],
-                        rowsLast3Digits[0].subList(1, emptyList[0].size)
-                    )
-                    binding.giai1 = DataThongTinKetQua(
-                        rowsLast3Digits[1][0],
-                        rowsLast3Digits[1].subList(1, emptyList[1].size)
-                    )
-                    binding.giai2 = DataThongTinKetQua(
-                        rowsLast3Digits[2][0],
-                        rowsLast3Digits[2].subList(1, emptyList[2].size)
-                    )
-                    binding.giai3 = DataThongTinKetQua(
-                        rowsLast3Digits[3][0],
-                        rowsLast3Digits[3].subList(1, emptyList[3].size)
-                    )
-                    binding.giai4 = DataThongTinKetQua(
-                        rowsLast3Digits[4][0],
-                        rowsLast3Digits[4].subList(1, emptyList[4].size)
-                    )
-                    binding.giai5 = DataThongTinKetQua(
-                        rowsLast3Digits[5][0],
-                        rowsLast3Digits[5].subList(1, emptyList[5].size)
-                    )
-                    binding.giai6 = DataThongTinKetQua(
-                        rowsLast3Digits[6][0],
-                        rowsLast3Digits[6].subList(1, emptyList[6].size)
-                    )
-                    binding.giai7 = DataThongTinKetQua(
-                        rowsLast3Digits[7][0],
-                        rowsLast3Digits[7].subList(1, emptyList[7].size)
-                    )
-
-                } else {
-                    binding.giaiDB = DataThongTinKetQua(
-                        emptyList[0][0],
-                        emptyList[0].subList(1, emptyList[0].size)
-                    )
-                    binding.giai1 = DataThongTinKetQua(
-                        emptyList[1][0],
-                        emptyList[1].subList(1, emptyList[1].size)
-                    )
-                    binding.giai2 = DataThongTinKetQua(
-                        emptyList[2][0],
-                        emptyList[2].subList(1, emptyList[2].size)
-                    )
-                    binding.giai3 = DataThongTinKetQua(
-                        emptyList[3][0],
-                        emptyList[3].subList(1, emptyList[3].size)
-                    )
-                    binding.giai4 = DataThongTinKetQua(
-                        emptyList[4][0],
-                        emptyList[4].subList(1, emptyList[4].size)
-                    )
-                    binding.giai5 = DataThongTinKetQua(
-                        emptyList[5][0],
-                        emptyList[5].subList(1, emptyList[5].size)
-                    )
-                    binding.giai6 = DataThongTinKetQua(
-                        emptyList[6][0],
-                        emptyList[6].subList(1, emptyList[6].size)
-                    )
-                    binding.giai7 = DataThongTinKetQua(
-                        emptyList[7][0],
-                        emptyList[7].subList(1, emptyList[7].size)
-                    )
+                val rowsLast2Digits: MutableList<List<String>> = mutableListOf()
+                val digitsToTake = when (checkedId) {
+                    R.id.radio_button1 -> 2
+                    R.id.radio_button2 -> 3
+                    else -> 10
                 }
+                Log.d("doi",digitsToTake.toString())
+                for (item in emptyList) {
+                    val transformedItem = mutableListOf<String>()
+                    for (i in 0 until item.size) {
+                        if (i == 0) {
+                            transformedItem.add(item[i].toString())
+                        } else {
+                            val number = item[i].toString()
+                            val shortenedNumber = number.takeLast(digitsToTake)
+                            transformedItem.add(shortenedNumber)
+                        }
+                    }
+                    rowsLast2Digits.add(transformedItem)
+                }
+                Log.d("ketqua", rowsLast2Digits.toString())
+                binding.giaiDB = DataThongTinKetQua(
+                    rowsLast2Digits[0][0],
+                    rowsLast2Digits[0].subList(1, emptyList[0].size)
+                )
+                binding.giai1 = DataThongTinKetQua(
+                    rowsLast2Digits[1][0],
+                    rowsLast2Digits[1].subList(1, emptyList[1].size)
+                )
+                binding.giai2 = DataThongTinKetQua(
+                    rowsLast2Digits[2][0],
+                    rowsLast2Digits[2].subList(1, emptyList[2].size)
+                )
+                binding.giai3 = DataThongTinKetQua(
+                    rowsLast2Digits[3][0],
+                    rowsLast2Digits[3].subList(1, emptyList[3].size)
+                )
+                binding.giai4 = DataThongTinKetQua(
+                    rowsLast2Digits[4][0],
+                    rowsLast2Digits[4].subList(1, emptyList[4].size)
+                )
+                binding.giai5 = DataThongTinKetQua(
+                    rowsLast2Digits[5][0],
+                    rowsLast2Digits[5].subList(1, emptyList[5].size)
+                )
+                binding.giai6 = DataThongTinKetQua(
+                    rowsLast2Digits[6][0],
+                    rowsLast2Digits[6].subList(1, emptyList[6].size)
+                )
+                binding.giai7 = DataThongTinKetQua(
+                    rowsLast2Digits[7][0],
+                    rowsLast2Digits[7].subList(1, emptyList[7].size)
+                )
+
             }
             Log.d("doi", "da doi")
             binding.giaiDB =
